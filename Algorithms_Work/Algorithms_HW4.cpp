@@ -13,9 +13,20 @@ Postcondition:
 */
 unordered_set<int> randomSample2(int n){
     unordered_set<int> S;
-    // TODO:
-    // Implement the algorithm from Problem 2
     
+    for(int k = n - 1; k <= n; k++){
+        // Set sample to a random int between 1 and k
+        int sample = rand() % k + 1;
+        // Either add sample or n to the set
+        if (S.find(sample) != S.end())
+        {
+            S.insert(k);
+        }
+        else
+        {
+            S.insert(sample);
+        }
+    }
     
     return S;
 }
