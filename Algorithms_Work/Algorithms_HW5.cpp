@@ -51,15 +51,15 @@ vector<int> longestIncreasingSubsequence(const vector<int>& A) {
         }
     }
 
-    vector<int> longestSubsequence;                 // An empty vector to hold the longest subsequence 
+    vector<int> result;                 // An empty vector to hold the longest subsequence 
     for (int i = maxSubsequenceIndex; i >= 0; i = prev[i])      // Have i start at the "last" recorded subsequence index and update i to prev[i] each iteration
     {
-        longestSubsequence.push_back(A[i]);         // Add the value at index i to the longest subsequence
+        result.push_back(A[i]);         // Add the value at index i to the longest subsequence
         if (prev[i] == -1) break;
     }
     
-    reverse(longestSubsequence.begin(), longestSubsequence.end());     // When I created longestSubsequence, I created it backwards
-    return longestSubsequence;
+    reverse(result.begin(), result.end());     // When I created result, I created it backwards
+    return result;
 }
 
 int maxContiguousSubsequenceSum(const vector<int>& A) {
